@@ -1,0 +1,22 @@
+body {
+    background-image: url(design_images/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
+.nav {
+    height: 70px;
+    align-content: center;
+}
+.nav-item {
+    margin-left: 10px;
+}
+.text {   
+    color: #f8f9fa;
+}
+.text:hover {
+    color: #747a80;
+}
