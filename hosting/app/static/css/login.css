@@ -1,0 +1,25 @@
+.container {
+
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 10px;
+    text-align: center;
+}
+.container input {
+    color: aliceblue;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    width: 200px;
+}
+.field {
+    margin-top: 20px;
+    height: 70px;
+}
+.errorlist li {
+    list-style-type: none;
+    color: #dc3545;
+    
+}
