@@ -18,6 +18,9 @@
     margin-top: 20px;
     height: 70px;
 }
+.field label {
+    color: aliceblue;
+}
 .errorlist li {
     list-style-type: none;
     color: #dc3545;

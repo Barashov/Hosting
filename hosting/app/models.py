@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class Sites(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    site_photo = models.ImageField(upload_to='users_photos')
-    html_file = models.FileField(upload_to='users_files')
+    site_photo = models.ImageField(upload_to='users_photos/')
+    html_file = models.FileField(upload_to='users_files/')
     user = models.ForeignKey(User, on_delete=models.CASCADE)    
 
     class Meta:
