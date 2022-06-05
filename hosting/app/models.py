@@ -1,4 +1,4 @@
-from distutils.command import upload
+from django.urls import reverse
 from django.db  import models
 from django.contrib.auth.models import User
 
@@ -16,6 +16,10 @@ class Sites(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("site", kwargs={"pk": self.pk})
+    
 
     
 
