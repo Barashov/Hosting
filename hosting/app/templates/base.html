@@ -23,23 +23,28 @@
         <li class="nav-item">
           <a class="nav-link text h4" href="{% url 'sites' %}">Сайты</a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link text h4" href="{% url 'create_site' %}">Создать сайт</a>
         </li>
+        {% endif %}
         <li class="nav-item">
           <a class="nav-link text h4" href="#">Пользователи</a>
         </li>
 
-
+        {% if user.is_authenticated %}
+        <li class="nav-item ms-auto " >
+          <a class="nav-link text h4 " href="#">Профиль</a>
+        </li>
+        {% else %}
         <li class="nav-item ms-auto">
           <a class="nav-link text h4" href="{% url 'signup' %}">Регистрация</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link text h4" href="{% url 'login' %}">Войти</a>
         </li>
-        <li class="nav-item " >
-          <a class="nav-link text h4 " href="#">Профиль</a>
-        </li>
+        {% endif %}
+       
         
       </ul>
     {% block content %}{% endblock content %}
