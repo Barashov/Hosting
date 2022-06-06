@@ -1,3 +1,27 @@
-.errorlist li {
-    color: brown;
-} 
+.container {
+
+    width: 600px;
+    height: 580px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 10px;
+    text-align: center;
+}
+.field {
+    width: 100%;
+    color: aliceblue;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    margin-top: 20px;
+}
+.file-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.but {
+    margin-top: 20px;
+}
+.lab {
+    color: aliceblue;
+}
