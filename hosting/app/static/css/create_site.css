@@ -1,7 +1,7 @@
 .container {
 
-    width: 600px;
-    height: 580px;
+    width: 650px;
+    height: 630px;
     background: rgba(0, 0, 0, .4);
     border-radius: 10px;
     text-align: center;
@@ -24,4 +24,8 @@
 }
 .lab {
     color: aliceblue;
+}
+.errorlist li {
+    color: #dc3545;
+    list-style-type: none;
 }
