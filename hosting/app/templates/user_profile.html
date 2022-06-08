@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div class="container">
+    <img src="{{profile.profile_image.url}}" class="img" alt="">
+    <h2 class='text-light'>{{profile.name}} {{profile.surname}}</h2>
+    <h6 class="text-light">email:{{profile.email}}</h6>
+    <p class='text-light'>{{profile.bio}}</p>
+    <a href="" class="btn btn-secondary">сайты</a>
+    <div class="spase"></div>
+</div>
+
+{% endblock content %}
+
+
+
