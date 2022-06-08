@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock head%}
+
+
+{% block content %}
+<div class="content">
+
+    {% for user in users %}
+    <div class="user">
+        <img src="{{user.profile_image.url}}" class="img img-thumbnail" alt="">
+        <h2 class='text-light'>{{user.name}}</h2>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
+
+
+

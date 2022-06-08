@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/sites.css' %}">
+{% endblock head %}
 
 {% block content %}
+<div class='main'>
 {% for site in sites  %}
-<div class="card" style="width: 18rem;">
+<div class="card back" style="width: 35rem;">
     <img src={{site.site_photo.url}} class="card-img-top" alt={{site.site_photo.url}}>
-    <div class="card-body">
-      <h5 class="card-title">{{site.name}}</h5>
-      <p class="card-text">{{site.description}}</p>
-      <a href="{{site.get_absolute_url}}" class="btn btn-primary">Перейти на сайт</a>
+    <div class="card-body max">
+      <h5 class="card-title text-light">{{site.name}}</h5>
+      <p class="card-text text-light">{{site.description}}</p>
+      <a href="{{site.get_absolute_url}}" class="btn btn-secondary">Перейти на сайт</a>
     </div>
   </div>
 {% endfor %}
-
+</div>
 
 {% endblock content %}

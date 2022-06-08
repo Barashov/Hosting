@@ -29,7 +29,7 @@
         </li>
         {% endif %}
         <li class="nav-item">
-          <a class="nav-link text h4" href="#">Пользователи</a>
+          <a class="nav-link text h4" href="{% url 'users' %}">Пользователи</a>
         </li>
 
         {% if user.is_authenticated %}
@@ -44,8 +44,6 @@
           <a class="nav-link text h4" href="{% url 'login' %}">Войти</a>
         </li>
         {% endif %}
-       
-        
       </ul>
     {% block content %}{% endblock content %}
 </body>
