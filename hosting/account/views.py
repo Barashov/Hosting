@@ -1,7 +1,9 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+
+from django.shortcuts import redirect, render
+
+
 from django.views import View
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, ProfileForm
 from django.views.generic import CreateView, ListView
 from django.contrib.auth.models import User
 from .models import UserProfile
@@ -32,6 +34,15 @@ class ProfileView(View):
             profile = GetInformation.get_profile(request.user)
             return render(request, 'user_profile.html', {'profile': profile})
         else:
-            return HttpResponse('не найден')
-    def post(self):
-        pass
+            return redirect('create_profile')
+
+class ProfileCreateView(CreateView):
+    model = UserProfile
+    template_name = "create_profile.html"
+    success_url = '/'
+    form_class = ProfileForm
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.save()
+        return super().form_valid(form)
