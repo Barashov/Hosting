@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from .forms import CustomUserCreationForm
@@ -15,7 +16,6 @@ class UserCreateView(CreateView):
     success_url = '/'
 
 
-
 class UsersView(ListView):
     model = UserProfile
     template_name = "users.html"
@@ -23,5 +23,15 @@ class UsersView(ListView):
 
 class UserProfileView(View):
     def get(self, request, pk):
-        profile = GetInformation.get_user_profile(pk)
+        profile = GetInformation.get_file(pk)
         return render(request, 'user_profile.html', {'profile': profile})
+    
+class ProfileView(View):
+    def get(self, request):
+        if GetInformation.is_have_profile(request.user):
+            profile = GetInformation.get_profile(request.user)
+            return render(request, 'user_profile.html', {'profile': profile})
+        else:
+            return HttpResponse('не найден')
+    def post(self):
+        pass
