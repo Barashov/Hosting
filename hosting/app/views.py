@@ -35,3 +35,9 @@ class SiteCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+class GetUserSitesListView(ListView):
+    template_name = "sites.html"
+    context_object_name = "sites"
+    def get_queryset(self):
+        return Sites.objects.filter(user=self.request.user)
