@@ -6,6 +6,7 @@ from .models import Sites
 from django.views import View
 from .logics import GetInformation
 from .forms import CreateSiteForm
+from account.models import UserProfile
 
 
 # Create your views here.
@@ -40,4 +41,6 @@ class GetUserSitesListView(ListView):
     template_name = "sites.html"
     context_object_name = "sites"
     def get_queryset(self):
-        return Sites.objects.filter(user=self.request.user)
+        pk = self.kwargs['pk']
+        user = UserProfile.objects.get(pk=pk).user
+        return Sites.objects.filter(user=user)
