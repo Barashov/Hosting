@@ -1,5 +1,4 @@
-from dataclasses import field, fields
-from pyexpat import model
+from .models import UserProfile
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -22,3 +21,10 @@ class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['password2'].label = "Confirm Password"
+        
+        
+class ProfileForm(forms.ModelForm):
+    
+    class Meta:
+        model = UserProfile
+        fields = ("name", "surname", "profile_image", "bio", "email")

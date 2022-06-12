@@ -34,7 +34,7 @@
 
         {% if user.is_authenticated %}
         <li class="nav-item ms-auto " >
-          <a class="nav-link text h4 " href="#">Профиль</a>
+          <a class="nav-link text h4 " href="{% url 'profile' %}">Профиль</a>
         </li>
         {% else %}
         <li class="nav-item ms-auto">

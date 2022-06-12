@@ -12,6 +12,7 @@
     <div class="user">
         <img src="{{user.profile_image.url}}" class="img img-thumbnail" alt="">
         <h2 class='text-light'>{{user.name}}</h2>
+        <a href="{{user.get_absolute_url}}" class="btn btn-secondary">Профиль</a>
     </div>
     {% endfor %}
 </div>
