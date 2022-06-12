@@ -32,7 +32,8 @@ class ProfileView(View):
     def get(self, request):
         if GetInformation.is_have_profile(request.user):
             profile = GetInformation.get_profile(request.user)
-            return render(request, 'user_profile.html', {'profile': profile})
+            return render(request, 'user_profile.html', {'profile': profile,
+                                                         'user_in_account': True})
         else:
             return redirect('create_profile')
 
@@ -46,3 +47,11 @@ class ProfileCreateView(CreateView):
         form.instance.user = self.request.user
         form.save()
         return super().form_valid(form)
+    
+class ChangeProfileView(View):
+    def get(self, request):
+        user = request.user
+        Profile = UserProfile.objects.get(user=user)
+        return render(request, 'change_profile.html', {'profile': Profile})
+    def post(self, request):
+        pass
