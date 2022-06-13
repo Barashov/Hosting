@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 
 
 from django.views import View
-from .forms import CustomUserCreationForm, ProfileForm, ChangeProfileForm
+from .forms import CustomUserCreationForm, ProfileForm
 from django.views.generic import CreateView, ListView, UpdateView
 from django.contrib.auth.models import User
 from .models import UserProfile
