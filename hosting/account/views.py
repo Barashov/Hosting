@@ -1,13 +1,15 @@
 
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 
 
 from django.views import View
-from .forms import CustomUserCreationForm, ProfileForm
-from django.views.generic import CreateView, ListView
+from .forms import CustomUserCreationForm, ProfileForm, ChangeProfileForm
+from django.views.generic import CreateView, ListView, UpdateView
 from django.contrib.auth.models import User
 from .models import UserProfile
 from .logic import GetInformation
+
 # Create your views here.
 
 
@@ -48,10 +50,8 @@ class ProfileCreateView(CreateView):
         form.save()
         return super().form_valid(form)
     
-class ChangeProfileView(View):
-    def get(self, request):
-        user = request.user
-        Profile = UserProfile.objects.get(user=user)
-        return render(request, 'change_profile.html', {'profile': Profile})
-    def post(self, request):
-        pass
+class ChangeProfileView(UpdateView):
+    model = UserProfile
+    fields = ['name', 'surname', 'profile_image', 'bio', 'email']
+    template_name = 'change_profile.html'
+    success_url = reverse_lazy('profile')

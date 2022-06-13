@@ -8,5 +8,6 @@ urlpatterns = [
     path('user/<pk>/', UserProfileView.as_view(), name='user'),
     path('profile', ProfileView.as_view(), name='profile' ),
     path('create-profile', ProfileCreateView.as_view(), name='create_profile'),
-    path('change-profile', ChangeProfileView.as_view(), name='change_profile')
+    path('change-profile/<slug:pk>/', ChangeProfileView.as_view(), name='change_profile'),
+    
 ]
