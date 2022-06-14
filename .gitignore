@@ -5,6 +5,7 @@
 __pycache__
 db.sqlite3
 .idea/
+hosting/media
 
 # Backup files # 
 *.bak 

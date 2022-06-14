@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+    width: 500px;
+    height: 800px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 10px;
+}
+.field {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid aliceblue;
+    color: aliceblue;
+    outline: none;
+}
+.form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

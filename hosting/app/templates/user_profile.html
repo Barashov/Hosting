@@ -13,7 +13,7 @@
     <p class='text-light'>{{profile.bio}}</p>
     <a href="{% url 'user_sites' profile.pk%}" class="btn btn-secondary">сайты</a>
     {% if user_in_account %}
-    <a href="{% url 'change_profile'%}" class="btn btn-secondary">редактировать профиль</a>
+    <a href="{% url 'change_profile' profile.pk%}" class="btn btn-secondary">редактировать профиль</a>
     {% endif %}
     <div class="spase"></div>
 </div>
