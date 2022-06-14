@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/change_profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/create_profile.css' %}">
 {% endblock head %}
 
 
@@ -9,8 +9,14 @@
 <div class="container">
 <form method="post">
 {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Изменить</button>
+    
+{{form.name}}
+{{form.surname}}
+{{form.email}}
+{{form.bio}}
+<h5 class='text-light'>фото</h5>
+{{form.profile_image}}
+<button type="submit" class="btn btn-warning btn-sm but">изменить</button>
 </form>
     
 </div>

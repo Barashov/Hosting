@@ -51,7 +51,8 @@ class ProfileCreateView(CreateView):
         return super().form_valid(form)
     
 class ChangeProfileView(UpdateView):
+    form_class = ProfileForm
     model = UserProfile
-    fields = ['name', 'surname', 'profile_image', 'bio', 'email']
+    
     template_name = 'change_profile.html'
     success_url = reverse_lazy('profile')
